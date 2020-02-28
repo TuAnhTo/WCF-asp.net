@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="warehousedemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="inventoryEntity">
+    <Key>
+      <PropertyRef Name="InventoryID" />
+    </Key>
+    <Property Name="InventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_inventories_Products" FromRole="inventories" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="ProductEntity">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="inventories" Relationship="Self.FK_inventories_Products" FromRole="Products" ToRole="inventories" />
+  </EntityType>
+  <Association Name="FK_inventories_Products">
+    <End Role="Products" Type="warehousedemoModel.ProductEntity" Multiplicity="1" />
+    <End Role="inventories" Type="warehousedemoModel.inventoryEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="inventories">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="warehousedemoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="inventoryEntities" EntityType="warehousedemoModel.inventoryEntity" />
+    <EntitySet Name="ProductEntities" EntityType="warehousedemoModel.ProductEntity" />
+    <AssociationSet Name="FK_inventories_Products" Association="Self.FK_inventories_Products">
+      <End Role="Products" EntitySet="ProductEntities" />
+      <End Role="inventories" EntitySet="inventoryEntities" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

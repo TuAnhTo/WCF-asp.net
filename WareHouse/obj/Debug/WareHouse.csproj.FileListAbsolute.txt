@@ -1,0 +1,11 @@
+C:\Users\Tu\source\repos\WareHouse\WareHouse\bin\WareHouse.dll.config
+C:\Users\Tu\source\repos\WareHouse\WareHouse\bin\WareHouse.dll
+C:\Users\Tu\source\repos\WareHouse\WareHouse\bin\WareHouse.pdb
+C:\Users\Tu\source\repos\WareHouse\WareHouse\bin\EntityFramework.dll
+C:\Users\Tu\source\repos\WareHouse\WareHouse\bin\EntityFramework.SqlServer.dll
+C:\Users\Tu\source\repos\WareHouse\WareHouse\bin\EntityFramework.xml
+C:\Users\Tu\source\repos\WareHouse\WareHouse\bin\EntityFramework.SqlServer.xml
+C:\Users\Tu\source\repos\WareHouse\WareHouse\obj\Debug\WareHouse.csprojAssemblyReference.cache
+C:\Users\Tu\source\repos\WareHouse\WareHouse\obj\Debug\WareHouse.csproj.CopyComplete
+C:\Users\Tu\source\repos\WareHouse\WareHouse\obj\Debug\WareHouse.dll
+C:\Users\Tu\source\repos\WareHouse\WareHouse\obj\Debug\WareHouse.pdb
